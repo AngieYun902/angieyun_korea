@@ -1,0 +1,260 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Discover South Korea: Seoul, Busan, Jeju and Gyeongju.">
+    <title>Korea, Your Way | Explore South Korea</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- External library stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header and navigation -->
+    <header class="site-header">
+        <a class="logo" href="#home">KOREA, <span>YOUR WAY.</span></a>
+
+        <button class="menu-toggle" type="button"
+            aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="#destinations">Destinations</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#map-section">Explore Map</a>
+            <a href="#plan">Plan a Trip</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero section -->
+        <section id="home" class="hero">
+            <div class="hero-content" data-aos="fade-up">
+                <span class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</span>
+
+                <h1>
+                    <span class="south">SOUTH</span>
+                    <span class="korea">KOREA.</span>
+                    <br>
+                    <em>Endless Experiences.</em>
+                </h1>
+
+                <p>
+                    From the vibrant streets of Seoul to the peaceful shores
+                    of Jeju. Explore Korea your way.
+                </p>
+
+                <a class="button button-light" href="#destinations">
+                    Start Exploring <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+            <span class="hero-caption">SEOUL · BUSAN · JEJU · GYEONGJU</span>
+        </section>
+
+        <!-- Destination slider using Glide.js -->
+        <section id="destinations" class="section container">
+            <div class="section-heading" data-aos="fade-up">
+                <div>
+                    <span class="eyebrow">PICK YOUR ADVENTURE</span>
+                    <h2>Explore Your Korea</h2>
+                </div>
+                <p>Four destinations. Four different ways to experience Korea.</p>
+            </div>
+
+            <div class="glide" aria-label="Korean destinations carousel">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+
+                        <!-- Seoul -->
+                        <li class="glide__slide">
+                            <article class="destination-card">
+                                <img src="images/seoul.jpeg"
+                                    alt="Seoul cityscape" loading="lazy">
+                                <div class="card-content">
+                                    <span>01 / CITY LIFE</span>
+                                    <h3>Seoul</h3>
+                                    <p>Where ancient palaces meet modern city lights.</p>
+                                </div>
+                            </article>
+                        </li>
+
+                        <!-- Busan -->
+                        <li class="glide__slide">
+                            <article class="destination-card">
+                                <img src="images/busan.jpeg"
+                                    alt="Coastal city scenery" loading="lazy">
+                                <div class="card-content">
+                                    <span>02 / COASTAL ESCAPE</span>
+                                    <h3>Busan</h3>
+                                    <p>Colorful neighborhoods and refreshing ocean views.</p>
+                                </div>
+                            </article>
+                        </li>
+
+                        <!-- Jeju Island -->
+                        <li class="glide__slide">
+                            <article class="destination-card">
+                                <img
+                                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85"
+                                    alt="Green natural landscape" loading="lazy">
+                                <div class="card-content">
+                                    <span>03 / NATURE</span>
+                                    <h3>Jeju Island</h3>
+                                    <p>Volcanic landscapes and a slower island rhythm.</p>
+                                </div>
+                            </article>
+                        </li>
+
+                        <!-- Gyeongju -->
+                        <li class="glide__slide">
+                            <article class="destination-card">
+                                <img
+                                    src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1000&q=85"
+                                    alt="Traditional Korean architecture" loading="lazy">
+                                <div class="card-content">
+                                    <span>04 / HERITAGE</span>
+                                    <h3>Gyeongju</h3>
+                                    <p>Discover the timeless charm of Korea’s history.</p>
+                                </div>
+                            </article>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- Slider navigation buttons -->
+                <div class="slider-controls" data-glide-el="controls">
+                    <button data-glide-dir="<" aria-label="Previous destination">←</button>
+                    <button data-glide-dir=">" aria-label="Next destination">→</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo gallery using FsLightbox -->
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <div class="section-heading" data-aos="fade-up">
+                    <div>
+                        <span class="eyebrow">THROUGH THE LENS</span>
+                        <h2>Postcards from Korea</h2>
+                    </div>
+                    <p>Tap an image to see it up close.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <a data-fslightbox="korea"
+                        href="https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1800&q=90">
+                        <img
+                            src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=900&q=80"
+                            alt="Korean traditional architecture" loading="lazy">
+                    </a>
+
+                    <a data-fslightbox="korea" href="images/seoul.jpeg">
+                        <img src="images/seoul.jpeg"
+                            alt="Seoul skyline" loading="lazy">
+                    </a>
+
+                    <a data-fslightbox="korea"
+                        href="https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=1800&q=90">
+                        <img
+                            src="https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=900&q=80"
+                            alt="Korean travel scenery" loading="lazy">
+                    </a>
+
+                    <a data-fslightbox="korea"
+                        href="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=90">
+                        <img
+                            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
+                            alt="Scenic nature landscape" loading="lazy">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive map using Leaflet.js -->
+        <section id="map-section" class="section container">
+            <div class="section-heading" data-aos="fade-up">
+                <div>
+                    <span class="eyebrow">EXPLORE MORE</span>
+                    <h2>Where to Next?</h2>
+                </div>
+                <p>Click the pins to learn about each destination.</p>
+            </div>
+
+            <div id="korea-map" role="region"
+                aria-label="Interactive map of destinations in South Korea"></div>
+        </section>
+
+        <!-- Trip planner section -->
+        <section id="plan" class="section plan-section">
+            <div class="container plan-layout">
+                <div data-aos="fade-right">
+                    <span class="eyebrow">YOUR TRIP STARTS HERE</span>
+                    <h2>Make Korea Yours.</h2>
+                    <p>
+                        Start dreaming about your next trip. Choose a destination
+                        and travel dates to create a simple trip summary.
+                    </p>
+                </div>
+
+                <!-- Trip planner form -->
+                <form id="trip-form" class="trip-form">
+                    <label for="destination">Destination</label>
+                    <select id="destination" required>
+                        <option value="">Choose a destination</option>
+                        <option>Seoul</option>
+                        <option>Busan</option>
+                        <option>Jeju Island</option>
+                        <option>Gyeongju</option>
+                    </select>
+
+                    <label for="start-date">Departure date</label>
+                    <input id="start-date" type="date" required>
+
+                    <label for="end-date">Return date</label>
+                    <input id="end-date" type="date" required>
+
+                    <button class="button button-dark" type="submit">
+                        Create My Trip ↗
+                    </button>
+
+                    <!-- Trip summary appears here -->
+                    <p id="trip-result" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <span class="logo">KOREA, <span>YOUR WAY.</span></span>
+        <p>Made with curiosity and a love for travel.</p>
+        <a href="#home">Back to top ↑</a>
+    </footer>
+
+    <!-- External JavaScript libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/glide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fslightbox@3.4.1/index.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

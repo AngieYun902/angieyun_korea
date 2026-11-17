@@ -1,0 +1,495 @@
+
+/* Global colors */
+:root {
+    --ink: #172b55;
+    --muted: #667799;
+    --accent: #2458f5;
+    --cream: #f5f8ff;
+    --white: #ffffff;
+}
+
+/* Basic CSS reset */
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+/* General page styles */
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: var(--cream)
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+button,
+input,
+select {
+    font: inherit
+}
+
+button {
+    cursor: pointer
+}
+
+/* Main content container */
+.container {
+    width: min(1140px, calc(100% - 40px));
+    margin: auto
+}
+
+/* Header and navigation */
+.site-header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    min-height: 76px;
+    background: var(--cream)
+}
+
+/* Website logo */
+.logo {
+    font-size: 16px;
+    letter-spacing: .08em;
+    font-weight: 700
+}
+
+.logo span {
+    color: #2458f5
+}
+
+/* Mobile navigation menu */
+.menu-toggle {
+    background: none;
+    border: 0;
+    font-size: 25px
+}
+
+.site-nav {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: var(--cream);
+    box-shadow: 0 12px 20px #0001
+}
+
+.site-nav.open {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.site-nav a {
+    font-size: 14px
+}
+
+/* Hero section with background image */
+.hero {
+    min-height: 660px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.1)),
+        url("../images/hero.jpeg") center / cover no-repeat;
+}
+
+.hero-content {
+    width: min(1140px, calc(100% - 40px));
+    margin: auto;
+    padding: 70px 0
+}
+
+/* Small section labels */
+.eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase
+}
+
+/* Main heading typography */
+.hero h1,
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500
+}
+
+.hero h1 {
+    font-size: clamp(54px, 9vw, 105px);
+    line-height: 1.05;
+    margin: 25px 0
+}
+
+.hero h1 em {
+    color: #ffffff;
+}
+
+/* Korean flag inspired title colors */
+.hero h1 .south {
+    color: #0215a8;
+}
+
+.hero h1 .korea {
+    color: #f02939;
+}
+
+.hero h1 .south,
+.hero h1 .korea {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hero p {
+    max-width: 410px;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* Button styles and hover effects */
+.button {
+    display: inline-flex;
+    justify-content: center;
+    gap: 24px;
+    align-items: center;
+    border: 0;
+    padding: 17px 25px;
+    font-weight: 700;
+    font-size: 13px
+}
+
+.button-light {
+    background: #2458f5;
+    color: white;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.button-light:hover {
+    background: #173fc2;
+    transform: translateY(-4px);
+}
+
+.button-dark {
+    background: #2458f5;
+    color: white;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.button-dark:hover {
+    background: #173fc2;
+    transform: translateY(-4px);
+}
+
+/* Hero image caption */
+.hero-caption {
+    position: absolute;
+    bottom: 25px;
+    right: 20px;
+    font-size: 10px;
+    letter-spacing: .15em
+}
+
+/* General section spacing */
+.section {
+    padding: 85px 0
+}
+
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 35px
+}
+
+.section-heading h2 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.15;
+    margin: 12px 0
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 290px
+}
+
+/* Destination slider using Glide.js */
+.destination-card {
+    position: relative;
+    overflow: hidden;
+    height: 430px;
+    color: white;
+    background: #172b55;
+    border-radius: 18px;
+}
+
+/* Dark gradient to improve text readability */
+.destination-card:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 35%, #000a)
+}
+
+.destination-card img {
+    height: 100%
+}
+
+.card-content {
+    position: absolute;
+    z-index: 1;
+    bottom: 22px;
+    left: 23px;
+    right: 20px
+}
+
+.card-content span {
+    font-size: 10px;
+    letter-spacing: .15em
+}
+
+.card-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    margin: 10px 0
+}
+
+.card-content p {
+    font-size: 13px;
+    line-height: 1.5
+}
+
+/* Slider navigation arrows */
+.slider-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 22px
+}
+
+.slider-controls button {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #2458f5;
+    background: transparent;
+    color: #2458f5;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.slider-controls button:hover {
+    background: #2458f5;
+    color: white;
+}
+
+/* Photo gallery using FsLightbox */
+.gallery-section {
+    background: #eaf0ff
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px
+}
+
+.gallery-grid a {
+    overflow: hidden
+}
+
+.gallery-grid img {
+    height: 200px;
+    transition: transform .3s
+}
+
+.gallery-grid a:hover img {
+    transform: scale(1.06)
+}
+
+/* Interactive map using Leaflet.js */
+#korea-map {
+    height: 420px;
+    border-radius: 4px;
+    z-index: 0
+}
+
+/* Trip planner section */
+.plan-section {
+    background: #dce7ff
+}
+
+.plan-layout {
+    display: grid;
+    gap: 35px
+}
+
+.plan-layout h2 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.15;
+    margin: 18px 0
+}
+
+.plan-layout p {
+    line-height: 1.8;
+    color: #455979;
+    max-width: 450px;
+}
+
+/* Trip planner form */
+.trip-form {
+    display: grid;
+    gap: 12px;
+    background: white;
+    padding: 25px
+}
+
+.trip-form label {
+    font-size: 12px;
+    font-weight: 700
+}
+
+.trip-form select,
+.trip-form input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d4dcd5;
+    background: #fff;
+    color: var(--ink);
+    min-height: 48px
+}
+
+.trip-form button {
+    margin-top: 10px
+}
+
+/* Trip summary displayed after form submission */
+.trip-form #trip-result {
+    font-size: 13px;
+    margin: 0
+}
+
+/* Footer */
+.site-footer {
+    padding: 35px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start
+}
+
+.site-footer p,
+.site-footer a {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+/* Responsive layout for tablet and desktop */
+@media(min-width:700px) {
+    .site-header {
+        padding: 20px 5%
+    }
+
+    .menu-toggle {
+        display: none
+    }
+
+    .site-nav {
+        display: flex;
+        position: static;
+        padding: 0;
+        gap: 28px;
+        box-shadow: none
+    }
+
+    .hero {
+        min-height: 740px
+    }
+
+    .section {
+        padding: 115px 0
+    }
+
+    .section-heading {
+        flex-direction: row;
+        align-items: end;
+        justify-content: space-between
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px
+    }
+
+    .gallery-grid img {
+        height: 320px
+    }
+
+    .plan-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 90px;
+        align-items: center
+    }
+
+    .trip-form {
+        padding: 40px
+    }
+
+    .site-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 35px 5%
+    }
+}
+
+/* Accessibility: reduce motion when requested */
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+
+    * {
+        animation: none !important;
+        transition: none !important
+    }
+}
+
+/* Mobile hero title adjustment */
+@media (max-width: 699px) {
+    .hero h1 {
+        font-size: clamp(42px, 10vw, 56px);
+        line-height: 1.12;
+    }
+}
